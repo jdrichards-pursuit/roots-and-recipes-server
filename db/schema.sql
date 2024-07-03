@@ -1,8 +1,14 @@
 -- db/schema.sql
-DROP DATABASE IF EXISTS debug_arena;
-CREATE DATABASE debug_arena;
+DROP DATABASE IF EXISTS rr_db;
+CREATE DATABASE rr_db;
 
-\c debug_arena;
+\c rr_db;
+
+CREATE TABLE families(
+    id SERIAL PRIMARY KEY,
+    family_name VARCHAR(50) NOT NULL,
+    code VARCHAR(20) UNIQUE
+);
 
 
 CREATE TABLE users (
@@ -17,3 +23,52 @@ CREATE TABLE users (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+
+
+CREATE TABLE recipes(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50),
+chef VARCHAR(50),
+family VARCHAR(50) REFERENCES families(family_name),
+user_id INTEGER REFERENCES users(id),
+photo VARCHAR(100),
+created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE favorites(
+id SERIAL PRIMARY KEY,
+recipe_id INTEGER REFERENCES recipes(id),
+user_id INTEGER REFERENCES users(id)
+);
+
+CREATE TABLE categories(
+   id SERIAL PRIMARY KEY,
+category_name VARCHAR(50) UNIQUE
+);
+
+CREATE TABLE category_to_recipe(
+    id SERIAL PRIMARY KEY,
+recipe_id INTEGER REFERENCES recipes(id),
+category_name VARCHAR(50) REFERENCES categories(category_name)
+);
+
+CREATE TABLE ingredients(
+    id SERIAL PRIMARY KEY,
+   recipe_id INTEGER REFERENCES recipes(id),
+name VARCHAR(50),
+quantity VARCHAR(10),
+unit VARCHAR(10)
+);
+
+CREATE TABLE steps(
+id SERIAL PRIMARY KEY,
+ recipe_id INTEGER REFERENCES recipes(id),
+step VARCHAR(100)
+);
+
+CREATE TABLE notes(
+    id SERIAL PRIMARY KEY,
+note TEXT,
+step_id INTEGER REFERENCES steps(id),
+voice_notes TEXT
+);
