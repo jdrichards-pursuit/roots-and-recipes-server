@@ -6,7 +6,7 @@ CREATE DATABASE rr_db;
 
 CREATE TABLE families(
     id SERIAL PRIMARY KEY,
-    family_name VARCHAR(50) NOT NULL,
+    family_name VARCHAR(50) NOT NULL UNIQUE,
     code VARCHAR(20) UNIQUE
 );
 
