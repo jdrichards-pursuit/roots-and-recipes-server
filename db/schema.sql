@@ -19,6 +19,7 @@ CREATE TABLE users (
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     photo VARCHAR(100),
+    nickname VARCHAR(50),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
