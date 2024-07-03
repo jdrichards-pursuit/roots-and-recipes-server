@@ -4,8 +4,8 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const { createNewUser, findUserByUID } = require("../queries/users.js");
 
 auth.post("/register", async (req, res) => {
-  // req.body.nickname = "defaultName";
-  console.log(req.body);
+  req.body.family_code = "000000";
+  // console.log(req.body);
   const newUser = await createNewUser(req.body);
 
   if (newUser) {

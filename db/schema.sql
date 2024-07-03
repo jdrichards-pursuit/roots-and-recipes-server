@@ -20,6 +20,7 @@ CREATE TABLE users (
     last_name VARCHAR(100),
     photo VARCHAR(100),
     nickname VARCHAR(50),
+    family_code VARCHAR(20) REFERENCES families(code),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

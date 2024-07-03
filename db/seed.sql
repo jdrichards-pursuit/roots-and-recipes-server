@@ -6,8 +6,8 @@
 -- SELECT * from users 
 -- manually place the id into your INSERT INTO values
 
+\c rr_db
 
-
--- INSERT INTO families(
-
--- )
+INSERT INTO families(
+family_name, code 
+) VALUES('defaultFamily', '000000');
