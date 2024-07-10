@@ -16,11 +16,11 @@ INSERT INTO users(
      uid, email, username, first_name, last_name, password, photo, nickname, family_code, created_at, updated_at
 )
 VALUES
-     ('xJgmWfoxKwcqP7h8WYLlfc6aguB2', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', NULL, 'bobby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('XVeQN4ekEuZt8K5AGOezrlMJq5W2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', NULL, 'gabby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('dVPe9FZJc6X5IyUNyb9dLr4i51v1', 'mark@gmail.com', 'marker', 'Mark', 'Bell', 'markBell', NULL, 'marky', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('aB7pQ3JHk2T8LxWNm5j2Er1o67v3', 'john@gmail.com', 'johndoe123', 'John', 'Doe', 'johnDoe', NULL, 'johnny', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('cH8rY5JLm4U9OxZNm6k3Gs2p78w4', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', NULL, 'janie', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+     ('8EstL4YYNugcL261BVIcouQUO5F3', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', NULL, 'bobby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('a1eH3ZDmLuVJ7h96X6Iwhdh1WiV2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', NULL, 'gabby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('Z52Wr4M8FwayqGCXOCyh0LlwOai1', 'mark@gmail.com', 'marker', 'Mark', 'Bell', 'markBell', NULL, 'marky', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('F0EQJKbwWjMgQEEBn4bZF7kjl703', 'john@gmail.com', 'johndoe123', 'John', 'Doe', 'johnDoe', NULL, 'johnny', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', NULL, 'janie', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
     INSERT INTO recipes(
