@@ -18,6 +18,7 @@ CREATE TABLE users (
     username VARCHAR(100),
     first_name VARCHAR(100),
     last_name VARCHAR(100),
+    password VARCHAR(100),
     photo VARCHAR(100),
     nickname VARCHAR(50),
     family_code VARCHAR(20) REFERENCES families(code),
@@ -34,6 +35,7 @@ chef VARCHAR(50),
 family VARCHAR(50) REFERENCES families(family_name),
 user_id INTEGER REFERENCES users(id),
 photo VARCHAR(100),
+status BOOLEAN DEFAULT FALSE,
 created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -45,7 +47,7 @@ user_id INTEGER REFERENCES users(id)
 
 CREATE TABLE categories(
    id SERIAL PRIMARY KEY,
-category_name VARCHAR(50) UNIQUE
+   category_name VARCHAR(50) UNIQUE
 );
 
 CREATE TABLE category_to_recipe(
