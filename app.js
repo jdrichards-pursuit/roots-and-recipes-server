@@ -24,7 +24,7 @@ app.use("/api/recipes", recipeController);
 
 // ROUTES
 app.get("/", (_req, res) => {
-  res.send("Welcome to Firebase Backend Server");
+  res.send("Welcome to Roots and Recipes");
 });
 
 // 404 PAGE
