@@ -12,7 +12,7 @@ CREATE TABLE families(
 
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY ,
+    id SERIAL PRIMARY KEY,
     uid VARCHAR(255),
     email VARCHAR(100),
     username VARCHAR(100),
@@ -35,8 +35,10 @@ chef VARCHAR(50),
 family VARCHAR(50) REFERENCES families(family_name),
 user_id INTEGER REFERENCES users(id),
 photo VARCHAR(100),
-status BOOLEAN DEFAULT FALSE,
-created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+status BOOLEAN DEFAULT  TRUE,
+created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+ingredients VARCHAR(255),
+steps VARCHAR(255)
 );
 
 CREATE TABLE favorites(
@@ -56,23 +58,9 @@ recipe_id INTEGER REFERENCES recipes(id),
 category_name VARCHAR(50) REFERENCES categories(category_name)
 );
 
-CREATE TABLE ingredients(
-    id SERIAL PRIMARY KEY,
-   recipe_id INTEGER REFERENCES recipes(id),
-name VARCHAR(50),
-quantity VARCHAR(10),
-unit VARCHAR(10)
-);
-
-CREATE TABLE steps(
-id SERIAL PRIMARY KEY,
- recipe_id INTEGER REFERENCES recipes(id),
-step VARCHAR(100)
-);
-
 CREATE TABLE notes(
     id SERIAL PRIMARY KEY,
 note TEXT,
-step_id INTEGER REFERENCES steps(id),
+recipe_id INTEGER REFERENCES recipes(id),
 voice_notes TEXT
 );
