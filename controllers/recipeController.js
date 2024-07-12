@@ -8,6 +8,8 @@ const {
   getAllPublicRecipes,
   createRecipe,
   recipesById,
+  getAllLunchRecipes,
+  getAllDinnerRecipes,
 } = require("../queries/recipes");
 
 // To get ALL PUBLIC recipes
@@ -48,6 +50,28 @@ recipes.get("/:user_id", async (req, res) => {
     }
   } catch (error) {
     res.status(500).json({ error: "Server error" });
+  }
+});
+
+// To get ALL of the recipes that have lunch as a category
+recipes.get("/lunch", async (req, res) => {
+  try {
+    const allLunchRecipes = await getAllLunchRecipes();
+
+    res.status(200).json(allLunchRecipes);
+  } catch (error) {
+    res.status(500).json({ error: "server error" });
+  }
+});
+
+// To get ALL of the recipes that have dinner as a category
+recipes.get("/dinner", async (req, res) => {
+  try {
+    const allDinnerRecipes = await getAllDinnerRecipes();
+
+    res.status(200).json(allDinnerRecipes);
+  } catch (error) {
+    res.status(500).json({ error: "server error" });
   }
 });
 

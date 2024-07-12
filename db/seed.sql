@@ -47,3 +47,104 @@ VALUES
     ('Lamb Chops', 'Chef Gordon', 'defaultFamily', 5, 'lamb_chops.jpg', FALSE, CURRENT_TIMESTAMP, '4 lamb chops, 1 tbsp olive oil, 1 tsp rosemary, 1 tsp thyme, 1 piece garlic', 'Season lamb chops, Preheat grill, Grill for 5 minutes each side, Serve hot'),
     ('Vegetable Soup', 'Uncle Sam', 'defaultFamily', 5, 'vegetable_soup.jpg', TRUE, CURRENT_TIMESTAMP, '1 cup carrots, 1 cup celery, 1 cup potatoes, 1 cup tomatoes, 2 cups vegetable broth', 'Chop vegetables, Add broth, Simmer, Serve hot'),
     ('Shrimp Scampi', 'Cousin Joe', 'defaultFamily', 5, 'shrimp_scampi.jpg', FALSE, CURRENT_TIMESTAMP, '200 grams shrimp, 1/4 cup butter, 1/4 cup white wine, 1 piece garlic, 1 tbsp lemon juice', 'Cook shrimp, Add butter and wine, Add garlic and lemon juice, Serve hot');
+
+
+
+
+    INSERT INTO categories (
+    category_name
+)
+VALUES
+    (
+         'Breakfast'
+    ),
+    (
+         'Lunch'
+    ),
+    (
+         'Dinner'
+    ),
+    (
+         'Vegetarian'
+    ),
+    (
+         'Snacks'
+    ),
+    (
+         'Dessert'
+    ),
+    (
+         'Drinks'
+    );
+
+
+INSERT INTO category_to_recipe (
+    recipe_id, category_name
+)
+VALUES
+    (
+         1, 'Dinner'
+    ),
+    (
+         2, 'Dinner'
+    ),
+    (
+         3, 'Dinner'
+    ),
+    (
+         4, 'Lunch'
+    ),
+    (
+         5, 'Lunch'
+    ),
+    (
+         6, 'Dinner'
+    ),
+    (
+         7, 'Breakfast'
+    ),
+    (
+         8, 'Lunch'
+    ),
+    (
+         8, 'Dinner'
+    ),
+    (
+         9, 'Lunch'
+    ),
+    (
+         10, 'Dinner'
+    ),
+    (
+         11, 'Lunch'
+    ),
+    (
+         12, 'Lunch'
+    ),
+    (
+         13, 'Dinner'
+    ),
+    (
+         14, 'Lunch'
+    ),
+    (
+         15, 'Lunch'
+    ),
+    (
+         16, 'Dinner'
+    ),
+    (
+         17, 'Lunch'
+    ),
+    (
+         18, 'Dessert'
+    ),
+    (
+         19, 'Dinner'
+    ),
+    (
+         20, 'Dinner'
+    ),
+    (
+         21, 'Dinner'
+    );
