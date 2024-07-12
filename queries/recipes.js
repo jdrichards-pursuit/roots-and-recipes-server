@@ -57,8 +57,40 @@ const recipesById = async (user_id) => {
   }
 };
 
+// GET RECIPES WITH LUNCH AS A CATEGORY
+const getAllLunchRecipes = async () => {
+  try {
+    const query =
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_name = 'Lunch' LIMIT 8";
+
+    const lunchRecipes = await db.any(query);
+
+    return lunchRecipes;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+};
+
+// GET RECIPES WITH DINNER AS A CATEGORY
+const getAllDinnerRecipes = async () => {
+  try {
+    const query =
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_name = 'Dinner' LIMIT 8";
+
+    const dinnerRecipes = await db.any(query);
+
+    return dinnerRecipes;
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+};
+
 module.exports = {
   getAllPublicRecipes,
   createRecipe,
   recipesById,
+  getAllLunchRecipes,
+  getAllDinnerRecipes,
 };
