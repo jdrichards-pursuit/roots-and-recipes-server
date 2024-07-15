@@ -79,72 +79,72 @@ VALUES
 
 
 INSERT INTO category_to_recipe (
-    recipe_id, category_name
+    recipe_id, category_id
 )
 VALUES
     (
-         1, 'Dinner'
+         1, 3
     ),
     (
-         2, 'Dinner'
+         2, 3
     ),
     (
-         3, 'Dinner'
+         3, 3
     ),
     (
-         4, 'Lunch'
+         4, 2
     ),
     (
-         5, 'Lunch'
+         5, 2
     ),
     (
-         6, 'Dinner'
+         6, 3
     ),
     (
-         7, 'Breakfast'
+         7, 1
     ),
     (
-         8, 'Lunch'
+         8, 2
     ),
     (
-         8, 'Dinner'
+         8, 3
     ),
     (
-         9, 'Lunch'
+         9, 2
     ),
     (
-         10, 'Dinner'
+         10, 3
     ),
     (
-         11, 'Lunch'
+         11, 2
     ),
     (
-         12, 'Lunch'
+         12, 2
     ),
     (
-         13, 'Dinner'
+         13, 3
     ),
     (
-         14, 'Lunch'
+         14, 2
     ),
     (
-         15, 'Lunch'
+         15, 2
     ),
     (
-         16, 'Dinner'
+         16, 3
     ),
     (
-         17, 'Lunch'
+         17, 2
     ),
     (
-         18, 'Dessert'
+         18, 6
     ),
     (
-         19, 'Dinner'
+         19, 3
     ),
     (
-         20, 'Dinner'
+         20, 3
     ),
     (
-         21, 'Dinner'
+         21, 3
     );

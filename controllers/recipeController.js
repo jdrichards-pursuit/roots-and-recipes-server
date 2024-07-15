@@ -36,24 +36,7 @@ recipes.post("/", async (req, res) => {
   }
 });
 
-// To get ALL of the Recipes that the user created
-recipes.get("/:user_id", async (req, res) => {
-  const { user_id } = req.params;
-
-  try {
-    const recipes = await recipesById(user_id);
-    if (recipes) {
-      console.log(recipes);
-      res.status(200).json([...recipes]);
-    } else {
-      res.status(404).json({ error: "Recipes with this ID was not found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: "Server error" });
-  }
-});
-
-// To get ALL of the recipes that have lunch as a category
+// // To get ALL of the recipes that have lunch as a category
 recipes.get("/lunch", async (req, res) => {
   try {
     const allLunchRecipes = await getAllLunchRecipes();
@@ -64,7 +47,7 @@ recipes.get("/lunch", async (req, res) => {
   }
 });
 
-// To get ALL of the recipes that have dinner as a category
+// // To get ALL of the recipes that have dinner as a category
 recipes.get("/dinner", async (req, res) => {
   try {
     const allDinnerRecipes = await getAllDinnerRecipes();
@@ -72,6 +55,22 @@ recipes.get("/dinner", async (req, res) => {
     res.status(200).json(allDinnerRecipes);
   } catch (error) {
     res.status(500).json({ error: "server error" });
+  }
+});
+
+// To get ALL of the Recipes that the user created
+recipes.get("/:user_id", async (req, res) => {
+  const { user_id } = req.params;
+
+  try {
+    const recipes = await recipesById(user_id);
+    if (recipes.length > 0) {
+      res.status(200).json(recipes);
+    } else {
+      res.status(404).json({ error: "No recipes found for this user ID" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
   }
 });
 
