@@ -4,6 +4,7 @@ const express = require("express");
 
 const authController = require("./controllers/authController");
 const recipeController = require("./controllers/recipeController");
+const categoryController = require("./controllers/categoryController");
 
 // CONFIGURATION
 const app = express();
@@ -21,6 +22,8 @@ app.use(express.json());
 app.use("/api/auth", authController);
 
 app.use("/api/recipes", recipeController);
+
+app.use("/api/categories", categoryController);
 
 // ROUTES
 app.get("/", (_req, res) => {

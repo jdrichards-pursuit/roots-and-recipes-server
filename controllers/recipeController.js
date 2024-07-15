@@ -10,6 +10,7 @@ const {
   recipesById,
   getAllLunchRecipes,
   getAllDinnerRecipes,
+  lastRecipeById,
 } = require("../queries/recipes");
 
 // To get ALL PUBLIC recipes
@@ -29,7 +30,7 @@ recipes.post("/", async (req, res) => {
 
   try {
     const newRecipe = await createRecipe(req.body);
-    console.log("new recipe:", newRecipe);
+    // console.log("new recipe:", newRecipe);
     res.status(200).json(newRecipe);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -74,6 +75,18 @@ recipes.get("/:user_id", async (req, res) => {
   }
 });
 
+// To get the most recent recipe the user has created
+recipes.get("/latest/:user_id", async (req, res) => {
+  const { user_id } = req.params;
+  console.log(user_id);
+  try {
+    const latestRecipe = await lastRecipeById(user_id);
+
+    res.status(200).json(latestRecipe);
+  } catch (error) {
+    res.status(500).json({ error: "server error" });
+  }
+});
 // recipes.get("/recipes/:user_id", verifyToken, async (req, res) => {
 //   const userId = req.userId;
 
