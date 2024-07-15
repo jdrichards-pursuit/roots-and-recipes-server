@@ -55,7 +55,7 @@ CREATE TABLE categories(
 CREATE TABLE category_to_recipe(
     id SERIAL PRIMARY KEY,
 recipe_id INTEGER REFERENCES recipes(id),
-category_name VARCHAR(50) REFERENCES categories(category_name)
+category_id INTEGER REFERENCES categories(id)
 );
 
 CREATE TABLE notes(

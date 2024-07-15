@@ -39,7 +39,6 @@ const createRecipe = async (recipe) => {
       ingredients,
       steps,
     ]);
-    console.log("new recipe:", newRecipe);
     return newRecipe;
   } catch (error) {
     return error;
@@ -57,11 +56,11 @@ const recipesById = async (user_id) => {
   }
 };
 
-// GET RECIPES WITH LUNCH AS A CATEGORY
+// // GET RECIPES WITH LUNCH AS A CATEGORY
 const getAllLunchRecipes = async () => {
   try {
     const query =
-      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_name = 'Lunch' LIMIT 8";
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id = 2 LIMIT 8";
 
     const lunchRecipes = await db.any(query);
 
@@ -72,11 +71,11 @@ const getAllLunchRecipes = async () => {
   }
 };
 
-// GET RECIPES WITH DINNER AS A CATEGORY
+// // GET RECIPES WITH DINNER AS A CATEGORY
 const getAllDinnerRecipes = async () => {
   try {
     const query =
-      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_name = 'Dinner' LIMIT 8";
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id =  3 LIMIT 8";
 
     const dinnerRecipes = await db.any(query);
 
