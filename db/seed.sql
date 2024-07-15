@@ -23,14 +23,14 @@ VALUES
      ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', NULL, 'janie', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
-   INSERT INTO recipes(
+  INSERT INTO recipes(
     name, chef, family, user_id, photo, status, created_at, ingredients, steps
 ) VALUES 
     ('Spaghetti Bolognese', 'Uncle John', 'defaultFamily', 1, 'spaghetti.jpg', FALSE, CURRENT_TIMESTAMP, '200 grams spaghetti, 250 grams ground beef, 1 cup tomato sauce, 1 piece onion, 2 garlic cloves', 'Cook spaghetti, Cook ground beef, Add tomato sauce, Mix with spaghetti, Serve hot'),
     ('Chicken Curry', 'Auntie Jane', 'defaultFamily', 1, 'chicken_curry.jpg', TRUE, CURRENT_TIMESTAMP, '500 grams chicken, 1 cup curry sauce, 1 piece onion, 2 garlic cloves, 1 piece ginger', 'Cook chicken, Add curry sauce, Cook onion and garlic, Mix together, Serve hot'),
-    ('Beef Stew', 'Grandpa', 'defaultFamily', 1, 'beef_stew.jpg', FALSE, CURRENT_TIMESTAMP, '500 grams beef, 2 cups beef broth, 3 pieces carrot, 2 pieces potato, 1 piece onion', 'Cook beef, Add beef broth, Add vegetables, Simmer for 2 hours, Serve hot'),
+    ('Beef Stew', 'Grandpa', 'defaultFamily', 1, 'beef_stew.jpg', TRUE, CURRENT_TIMESTAMP, '500 grams beef, 2 cups beef broth, 3 pieces carrot, 2 pieces potato, 1 piece onion', 'Cook beef, Add beef broth, Add vegetables, Simmer for 2 hours, Serve hot'),
     ('Grilled Salmon', 'Mom', 'defaultFamily', 1, 'grilled_salmon.jpg', TRUE, CURRENT_TIMESTAMP, '2 pieces salmon, 1 tbsp olive oil, 1 tsp salt, 1 tsp pepper, 1 piece lemon', 'Season salmon, Heat grill, Grill salmon for 5 minutes each side, Squeeze lemon, Serve hot'),
-    ('Vegetable Stir Fry', 'Anna Banana', 'defaultFamily', 1, 'veg_stir_fry.jpg', FALSE, CURRENT_TIMESTAMP, '1 cup broccoli, 1 cup bell pepper, 1 cup carrot, 1 tbsp soy sauce, 1 tsp garlic', 'Chop vegetables, Heat pan, Add vegetables, Stir fry with soy sauce and garlic, Serve hot'),
+    ('Vegetable Stir Fry', 'Anna Banana', 'defaultFamily', 1, 'veg_stir_fry.jpg', TRUE, CURRENT_TIMESTAMP, '1 cup broccoli, 1 cup bell pepper, 1 cup carrot, 1 tbsp soy sauce, 1 tsp garlic', 'Chop vegetables, Heat pan, Add vegetables, Stir fry with soy sauce and garlic, Serve hot'),
     ('Lasagna', 'Dad', 'defaultFamily', 2, 'lasagna.jpg', TRUE, CURRENT_TIMESTAMP, '200 grams lasagna noodles, 300 grams ground beef, 1 cup tomato sauce, 1 cup ricotta cheese, 1 cup mozzarella cheese', 'Cook lasagna noodles, Cook ground beef, Layer noodles with beef and sauce, Add cheeses, Bake for 45 minutes'),
     ('Pancakes', 'Grandma', 'defaultFamily', 2, 'pancakes.jpg', FALSE, CURRENT_TIMESTAMP, '1 cup flour, 1 cup milk, 1 egg, 1 tbsp sugar, 1 tsp baking powder', 'Mix ingredients, Heat pan, Pour batter, Flip when bubbles form, Serve with syrup'),
     ('Tacos', 'Uncle Mike', 'defaultFamily', 2, 'tacos.jpg', TRUE, CURRENT_TIMESTAMP, '200 grams ground beef, 1 cup lettuce, 1 cup tomato, 1 cup cheese, 6 taco shells', 'Cook ground beef, Prepare toppings, Fill taco shells, Serve with toppings, Enjoy'),
@@ -44,10 +44,12 @@ VALUES
     ('Chicken Alfredo', 'Mom', 'defaultFamily', 4, 'chicken_alfredo.jpg', TRUE, CURRENT_TIMESTAMP, '200 grams chicken, 1 cup pasta, 1/2 cup alfredo sauce, 1/4 cup parmesan cheese, 1 piece garlic', 'Cook chicken, Cook pasta, Add sauce, Mix together, Serve hot'),
     ('Greek Salad', 'Chef Alex', 'defaultFamily', 4, 'greek_salad.jpg', FALSE, CURRENT_TIMESTAMP, '1 cup cucumber, 1 cup tomato, 1/2 cup feta cheese, 1/4 cup olives, 1 tbsp olive oil', 'Chop vegetables, Add feta and olives, Toss with olive oil, Serve fresh'),
     ('Chocolate Cake', 'Aunt Lucy', 'defaultFamily', 5, 'chocolate_cake.jpg', TRUE, CURRENT_TIMESTAMP, '1 cup flour, 1 cup sugar, 1/2 cup cocoa powder, 1/2 cup butter, 2 eggs', 'Mix ingredients, Preheat oven, Pour batter, Bake for 30 minutes, Serve with frosting'),
-    ('Lamb Chops', 'Chef Gordon', 'defaultFamily', 5, 'lamb_chops.jpg', FALSE, CURRENT_TIMESTAMP, '4 lamb chops, 1 tbsp olive oil, 1 tsp rosemary, 1 tsp thyme, 1 piece garlic', 'Season lamb chops, Preheat grill, Grill for 5 minutes each side, Serve hot'),
+    ('Lamb Chops', 'Chef Gordon', 'defaultFamily', 5, 'lamb_chops.jpg', TRUE, CURRENT_TIMESTAMP, '4 lamb chops, 1 tbsp olive oil, 1 tsp rosemary, 1 tsp thyme, 1 piece garlic', 'Season lamb chops, Preheat grill, Grill for 5 minutes each side, Serve hot'),
     ('Vegetable Soup', 'Uncle Sam', 'defaultFamily', 5, 'vegetable_soup.jpg', TRUE, CURRENT_TIMESTAMP, '1 cup carrots, 1 cup celery, 1 cup potatoes, 1 cup tomatoes, 2 cups vegetable broth', 'Chop vegetables, Add broth, Simmer, Serve hot'),
-    ('Shrimp Scampi', 'Cousin Joe', 'defaultFamily', 5, 'shrimp_scampi.jpg', FALSE, CURRENT_TIMESTAMP, '200 grams shrimp, 1/4 cup butter, 1/4 cup white wine, 1 piece garlic, 1 tbsp lemon juice', 'Cook shrimp, Add butter and wine, Add garlic and lemon juice, Serve hot');
-
+    ('Shrimp Scampi', 'Cousin Joe', 'defaultFamily', 5, 'shrimp_scampi.jpg', TRUE, CURRENT_TIMESTAMP, '200 grams shrimp, 1/4 cup butter, 1/4 cup white wine, 1 piece garlic, 1 tbsp lemon juice', 'Cook shrimp, Add butter and wine, Add garlic and lemon juice, Serve hot'),
+    ('Roast Chicken', 'Chef Emma', 'defaultFamily', 5, 'roast_chicken.jpg', TRUE, CURRENT_TIMESTAMP, '1 whole chicken, 2 tbsp olive oil, 1 tsp salt, 1 tsp pepper, 1 bunch rosemary', 'Preheat oven, Season chicken, Roast for 90 minutes, Serve hot'),
+    ('Vegetable Lasagna', 'Chef Rosa', 'defaultFamily', 5, 'veg_lasagna.jpg', TRUE, CURRENT_TIMESTAMP, '200 grams lasagna noodles, 1 cup spinach, 1 cup ricotta cheese, 1 cup tomato sauce, 1 cup mozzarella cheese', 'Cook noodles, Layer with spinach and ricotta, Add tomato sauce, Add mozzarella, Bake for 45 minutes'),
+    ('Turkey Sandwich', 'Chef Max', 'defaultFamily', 5, 'turkey_sandwich.jpg', TRUE, CURRENT_TIMESTAMP, '2 slices bread, 100 grams turkey, 1 slice cheese, 1 tbsp mayonnaise, 1 leaf lettuce', 'Spread mayonnaise on bread, Add turkey, Add cheese, Add lettuce, Serve fresh');
 
 
 
@@ -107,40 +109,37 @@ VALUES
          8, 2
     ),
     (
-         8, 3
+         9, 3
     ),
     (
-         9, 2
+         10, 2
     ),
     (
-         10, 3
-    ),
-    (
-         11, 2
+         11, 3
     ),
     (
          12, 2
     ),
     (
-         13, 3
+         13, 2
     ),
     (
-         14, 2
+         14, 3
     ),
     (
          15, 2
     ),
     (
-         16, 3
+         16, 2
     ),
     (
-         17, 2
+         17, 3
     ),
     (
-         18, 6
+         18, 2
     ),
     (
-         19, 3
+         19, 6
     ),
     (
          20, 3

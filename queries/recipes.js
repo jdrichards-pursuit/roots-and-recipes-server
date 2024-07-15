@@ -56,11 +56,23 @@ const recipesById = async (user_id) => {
   }
 };
 
+// GET USERS MOST RECENT RECIPE
+const lastRecipeById = async (user_id) => {
+  try {
+    const query =
+      "SELECT * FROM recipes WHERE user_id=$1 ORDER BY created_at DESC LIMIT 1";
+    const lastRecipe = await db.oneOrNone(query, user_id);
+    return lastRecipe;
+  } catch (error) {
+    return error;
+  }
+};
+
 // // GET RECIPES WITH LUNCH AS A CATEGORY
 const getAllLunchRecipes = async () => {
   try {
     const query =
-      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id = 2 LIMIT 8";
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id = 2 AND status = true LIMIT 8";
 
     const lunchRecipes = await db.any(query);
 
@@ -75,7 +87,7 @@ const getAllLunchRecipes = async () => {
 const getAllDinnerRecipes = async () => {
   try {
     const query =
-      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id =  3 LIMIT 8";
+      "SELECT * FROM recipes JOIN category_to_recipe ON recipes.id = category_to_recipe.recipe_id WHERE category_to_recipe.category_id = 3 AND status = true LIMIT 8";
 
     const dinnerRecipes = await db.any(query);
 
@@ -92,4 +104,5 @@ module.exports = {
   recipesById,
   getAllLunchRecipes,
   getAllDinnerRecipes,
+  lastRecipeById,
 };
