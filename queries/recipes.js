@@ -68,6 +68,16 @@ const lastRecipeById = async (user_id) => {
   }
 };
 
+const getSingleRecipe = async (id) => {
+  try {
+    const query = "SELECT * FROM recipes WHERE id = $1";
+    const singleRecipe = await db.one(query, id);
+    return singleRecipe;
+  } catch (error) {
+    return error;
+  }
+};
+
 // // GET RECIPES WITH LUNCH AS A CATEGORY
 const getAllLunchRecipes = async () => {
   try {
@@ -105,4 +115,5 @@ module.exports = {
   getAllLunchRecipes,
   getAllDinnerRecipes,
   lastRecipeById,
+  getSingleRecipe,
 };
