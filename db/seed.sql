@@ -2,17 +2,18 @@
 
 INSERT INTO families(
 family_name, code 
-) VALUES('defaultFamily', '000000');
+) VALUES('defaultFamily', '000000'),
+('Smith Family', '123456');
 
 INSERT INTO users(
-     uid, email, username, first_name, last_name, password, photo, nickname, family_code, created_at, updated_at
+     uid, email, username, first_name, last_name, password, photo, nickname, role, family_code, created_at, updated_at
 )
 VALUES
-     ('8EstL4YYNugcL261BVIcouQUO5F3', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', NULL, 'bobby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('a1eH3ZDmLuVJ7h96X6Iwhdh1WiV2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', NULL, 'gabby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('Z52Wr4M8FwayqGCXOCyh0LlwOai1', 'mark@gmail.com', 'marker', 'Mark', 'Bell', 'markBell', NULL, 'marky', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('F0EQJKbwWjMgQEEBn4bZF7kjl703', 'john@gmail.com', 'johndoe123', 'John', 'Doe', 'johnDoe', NULL, 'johnny', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', NULL, 'janie', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+     ('8EstL4YYNugcL261BVIcouQUO5F3', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', NULL, 'bobby', NULL, '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('a1eH3ZDmLuVJ7h96X6Iwhdh1WiV2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', NULL, NULL, 'gabby', '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('Z52Wr4M8FwayqGCXOCyh0LlwOai1', 'mark@gmail.com', 'marker', 'Mark', 'Bell', 'markBell', NULL, 'marky', NULL, '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('F0EQJKbwWjMgQEEBn4bZF7kjl703', 'john@gmail.com', 'johndoe123', 'John', 'Doe', 'johnDoe', NULL, 'johnny', NULL, '000000', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', NULL, 'janie', 'daughter', '123456', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
   INSERT INTO recipes(

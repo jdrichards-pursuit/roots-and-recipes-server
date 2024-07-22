@@ -24,10 +24,7 @@ const grabAllCategories = async () => {
 };
 
 //CREATES AN ENTRY INTO THE category-to-recipe table
-const createCategoryEntry = async (entry) => {
-  const { recipe_id, category_id } = entry;
-
-  console.log("Entry:", entry);
+const createCategoryEntry = async (recipe_id, category_id) => {
   try {
     const query =
       "INSERT INTO category_to_recipe (recipe_id, category_id) VALUES($1, $2) RETURNING *";
@@ -40,7 +37,19 @@ const createCategoryEntry = async (entry) => {
   }
 };
 
+const grabCategoriesBasedOnRecipeID = async (recipe_id) => {
+  try {
+    const query = `SELECT c.* FROM categories c JOIN category_to_recipe ctr ON c.id = ctr.category_id WHERE ctr.recipe_id = $1; `;
+
+    const categories = await db.any(query, [recipe_id]);
+    return categories;
+  } catch (error) {
+    return error;
+  }
+};
+
 module.exports = {
   grabAllCategories,
   createCategoryEntry,
+  grabCategoriesBasedOnRecipeID,
 };
