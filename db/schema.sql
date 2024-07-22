@@ -1,78 +1,84 @@
 -- db/schema.sql
-DROP DATABASE IF EXISTS rr_db;
-CREATE DATABASE rr_db;
+DROP DATABASE IF EXISTS debug_arena;
+CREATE DATABASE debug_arena;
 
-\c rr_db;
-
-CREATE TABLE families(
-    id SERIAL PRIMARY KEY,
-    family_name VARCHAR(50) NOT NULL UNIQUE,
-    code VARCHAR(20) UNIQUE
-);
-
+\c debug_arena;
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY ,
-    uid VARCHAR(255),
-    email VARCHAR(100),
-    username VARCHAR(100),
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    password VARCHAR(100),
-    photo VARCHAR(100),
-    nickname VARCHAR(50),
-    family_code VARCHAR(20) REFERENCES families(code),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-
-
-CREATE TABLE recipes(
-id SERIAL PRIMARY KEY,
-name VARCHAR(50),
-chef VARCHAR(50),
-family VARCHAR(50) REFERENCES families(family_name),
-user_id INTEGER REFERENCES users(id),
-photo VARCHAR(100),
-status BOOLEAN DEFAULT FALSE,
-created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE favorites(
-id SERIAL PRIMARY KEY,
-recipe_id INTEGER REFERENCES recipes(id),
-user_id INTEGER REFERENCES users(id)
-);
-
-CREATE TABLE categories(
-   id SERIAL PRIMARY KEY,
-   category_name VARCHAR(50) UNIQUE
-);
-
-CREATE TABLE category_to_recipe(
     id SERIAL PRIMARY KEY,
-recipe_id INTEGER REFERENCES recipes(id),
-category_name VARCHAR(50) REFERENCES categories(category_name)
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    nick_name VARCHAR(255),
+    family_id INTEGER,
+    photo BYTEA,
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE ingredients(
+
+CREATE TABLE families (
     id SERIAL PRIMARY KEY,
-   recipe_id INTEGER REFERENCES recipes(id),
-name VARCHAR(50),
-quantity VARCHAR(10),
-unit VARCHAR(10)
+    name VARCHAR(255) NOT NULL,
+    code VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE steps(
-id SERIAL PRIMARY KEY,
- recipe_id INTEGER REFERENCES recipes(id),
-step VARCHAR(100)
-);
 
-CREATE TABLE notes(
+CREATE TABLE recipes (
     id SERIAL PRIMARY KEY,
-note TEXT,
-step_id INTEGER REFERENCES steps(id),
-voice_notes TEXT
+    name VARCHAR(255) NOT NULL,
+    chef VARCHAR(255) NOT NULL,
+    family VARCHAR(255),
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    photo VARCHAR(255),
+    created_at TIMESTAMP DEFAULT NOW()
 );
+
+
+CREATE TABLE ingredients (
+    id SERIAL PRIMARY KEY,
+    recipe_id INTEGER NOT NULL REFERENCES recipes(id),
+    name VARCHAR(255) NOT NULL,
+    quantity VARCHAR(255) NOT NULL,
+    unit VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE steps (
+    id SERIAL PRIMARY KEY,
+    recipe_id INTEGER NOT NULL REFERENCES recipes(id),
+    step TEXT NOT NULL
+);
+
+
+CREATE TABLE notes (
+    id SERIAL PRIMARY KEY,
+    body TEXT NOT NULL,
+    step_id INTEGER NOT NULL REFERENCES steps(id),
+    voice_notes_guid VARCHAR(255)
+);
+
+
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE favorites (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    recipe_id INTEGER NOT NULL REFERENCES recipes(id)
+);
+
+
+CREATE TABLE category_to_recipe (
+    id SERIAL PRIMARY KEY,
+    recipe_id INTEGER NOT NULL REFERENCES recipes(id),
+    category_name VARCHAR(255) NOT NULL REFERENCES categories(name)
+);
+
+
+ALTER TABLE users ADD CONSTRAINT fk_family FOREIGN KEY (family_id) REFERENCES families(id);
+ALTER TABLE recipes ADD CONSTRAINT fk_family_name FOREIGN KEY (family) REFERENCES families(name);
