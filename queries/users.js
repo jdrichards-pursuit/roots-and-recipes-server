@@ -10,12 +10,13 @@ const createNewUser = async (user) => {
     password,
     photo,
     nickname,
+    role,
     family_code,
   } = user;
   // console.log(user);
   try {
     const newUser = await db.one(
-      "INSERT INTO users (uid, email, username, first_name, last_name, password, photo, nickname, family_code) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      "INSERT INTO users (uid, email, username, first_name, last_name, password, photo, nickname, role, family_code) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
       [
         uid,
         email,
@@ -25,6 +26,7 @@ const createNewUser = async (user) => {
         password,
         photo,
         nickname,
+        role,
         family_code,
       ]
     );
