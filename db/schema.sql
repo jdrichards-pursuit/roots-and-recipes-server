@@ -6,7 +6,7 @@ CREATE DATABASE rr_db;
 
 CREATE TABLE families(
     id SERIAL PRIMARY KEY,
-    family_name VARCHAR(50) NOT NULL UNIQUE,
+    family_name VARCHAR(50) NOT NULL,
     code VARCHAR(20) UNIQUE
 );
 
@@ -23,6 +23,7 @@ CREATE TABLE users (
     nickname VARCHAR(50),
     role VARCHAR(30),
     family_code VARCHAR(20) REFERENCES families(code),
+    owner BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -33,7 +34,7 @@ CREATE TABLE recipes(
 id SERIAL PRIMARY KEY,
 name VARCHAR(50),
 chef VARCHAR(50),
-family VARCHAR(50) REFERENCES families(family_name),
+family_id INTEGER REFERENCES families(id),
 user_id INTEGER REFERENCES users(id),
 photo TEXT,
 status BOOLEAN DEFAULT TRUE,
