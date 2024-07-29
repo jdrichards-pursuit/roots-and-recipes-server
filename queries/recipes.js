@@ -22,16 +22,16 @@ const getAllPublicRecipes = async () => {
 const createRecipe = async (recipe) => {
   // console.log(recipe);
 
-  const { name, family, chef, status, user_id, photo, ingredients, steps } =
+  const { name, family_id, chef, status, user_id, photo, ingredients, steps } =
     recipe;
 
   try {
     const query =
-      "INSERT INTO recipes (name, family, chef, status, user_id, photo, ingredients, steps) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *";
+      "INSERT INTO recipes (name, family_id, chef, status, user_id, photo, ingredients, steps) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *";
 
     const newRecipe = await db.one(query, [
       name,
-      family,
+      family_id,
       chef,
       status,
       user_id,
