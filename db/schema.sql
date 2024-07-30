@@ -40,7 +40,7 @@ photo TEXT,
 status BOOLEAN DEFAULT TRUE,
 created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 ingredients VARCHAR(255),
-steps VARCHAR(255)
+steps text
 );
 
 CREATE TABLE favorites(
