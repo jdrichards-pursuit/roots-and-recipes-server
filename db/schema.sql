@@ -19,7 +19,7 @@ CREATE TABLE users (
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     password VARCHAR(100),
-    photo VARCHAR(100),
+    photo TEXT,
     nickname VARCHAR(50),
     role VARCHAR(30),
     family_code VARCHAR(20) REFERENCES families(code),
