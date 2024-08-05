@@ -16,7 +16,7 @@ const corsOptions = {
   credentials: true,
 };
 // MIDDLEWARE
-app.use(cors(corsOptions()));
+app.use(cors(corsOptions));
 
 app.use((req, _res, next) => {
   console.log("Origin Requested:", req.headers.origin);
