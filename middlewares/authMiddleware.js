@@ -10,8 +10,9 @@ admin.initializeApp({
 });
 
 const authMiddleware = async (req, res, next) => {
+  console.log("AUTH MIDDLEWARE HEADER:", req.headers.authorization);
   const token = req.headers.authorization?.split("Bearer ")[1];
-
+  console.log("AUTH MIDDLEWARE TOKEN", token);
   if (!token) return res.status(401).send("No token provided");
 
   try {
