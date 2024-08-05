@@ -23,7 +23,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
+app.options(`*`, cors());
 app.use((req, _res, next) => {
   console.log("Origin Requested:", req.headers.origin);
   next();
