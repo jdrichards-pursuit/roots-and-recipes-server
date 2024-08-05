@@ -17,7 +17,7 @@ const authMiddleware = async (req, res, next) => {
 
   try {
     const decodedToken = await admin.auth().verifyIdToken(token);
-
+    console.log("DECODE TOKEN AUTH MIDDLEWAR:", decodedToken);
     req.user = decodedToken;
 
     next(); //this happens if everrything passes
