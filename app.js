@@ -6,24 +6,13 @@ const authController = require("./controllers/authController");
 const recipeController = require("./controllers/recipeController");
 const categoryController = require("./controllers/categoryController");
 const familyController = require("./controllers/familyController");
-const { credential } = require("firebase-admin");
 
 // CONFIGURATION
 const app = express();
 
-// const corsOptions = {
-//   origin: "https://roots-and-recipes.netlify.app",
-//   credentials: true,
-// };
 // MIDDLEWARE
-app.use(
-  cors({
-    origin: "https://roots-and-recipes.netlify.app", // Replace with your actual frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-app.options(`*`, cors());
+app.use(cors());
+
 app.use((req, _res, next) => {
   console.log("Origin Requested:", req.headers.origin);
   next();
