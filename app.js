@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 
 app.use((req, _res, next) => {
-  console.log("Origin Requested:", req.headers.origin);
+  // console.log("Origin Requested:", req.headers.origin);
   next();
 });
 
