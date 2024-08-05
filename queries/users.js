@@ -40,11 +40,12 @@ const createNewUser = async (user) => {
 };
 
 const findUserByUID = async (uid) => {
+  console.log("USERS QUERY UID:", uid);
   try {
     const query = "SELECT * FROM users WHERE uid = $1";
 
     const user = await db.oneOrNone(query, uid);
-
+    console.log("USERS QUERY USER:", user);
     return user;
   } catch (error) {
     console.error("Error finding User By UID:", error);
