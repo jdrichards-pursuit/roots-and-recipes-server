@@ -15,11 +15,11 @@ auth.post("/register", async (req, res) => {
   }
 });
 
-auth.get("/user/:uid", authMiddleware, async (req, res) => {
+auth.get("/user/:uid", async (req, res) => {
   const { uid } = req.params;
   console.log("AUTH CONTROLLER:", uid);
   const user = await findUserByUID(uid);
-  console.log(user);
+  console.log("USER IN AUTH CONTROLLER:", user);
   if (user) {
     res.status(200).json(user);
   } else {
