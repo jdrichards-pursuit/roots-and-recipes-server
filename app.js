@@ -11,12 +11,18 @@ const { credential } = require("firebase-admin");
 // CONFIGURATION
 const app = express();
 
-const corsOptions = {
-  origin: "https://roots-and-recipes.netlify.app",
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: "https://roots-and-recipes.netlify.app",
+//   credentials: true,
+// };
 // MIDDLEWARE
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://roots-and-recipes.netlify.app", // Replace with your actual frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use((req, _res, next) => {
   console.log("Origin Requested:", req.headers.origin);
