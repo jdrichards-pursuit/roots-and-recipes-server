@@ -3,19 +3,17 @@
 INSERT INTO families(
 family_name, code 
 ) VALUES('defaultFamily', '000000'),
-('Smith Family', '123456');
+('Smith', '123456');
 
 INSERT INTO users(
      uid, email, username, first_name, last_name, password, photo, nickname, role, family_code, owner, created_at, updated_at
 )
 VALUES
-     ('8EstL4YYNugcL261BVIcouQUO5F3', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612552/Screenshot_2024-08-02_at_11.28.59_AM_f9qbdv.png', 'bobby', NULL, '000000', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('a1eH3ZDmLuVJ7h96X6Iwhdh1WiV2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612332/Screenshot_2024-08-02_at_11.25.15_AM_ta6rxs.png', NULL, 'gabby', '123456', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+  ('8EstL4YYNugcL261BVIcouQUO5F3', 'bob@gmail.com', 'bob_bobby', 'Bob', 'Bobby', 'bobbobby', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612552/Screenshot_2024-08-02_at_11.28.59_AM_f9qbdv.png', 'bobby', NULL, '000000', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+     ('a1eH3ZDmLuVJ7h96X6Iwhdh1WiV2', 'gabby@gmail.com', 'the_gabby', 'Gabby', 'Peterson', 'thegabby', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612332/Screenshot_2024-08-02_at_11.25.15_AM_ta6rxs.png', NULL, 'Niece', '123456', TRUE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
      ('Z52Wr4M8FwayqGCXOCyh0LlwOai1', 'mark@gmail.com', 'marker', 'Mark', 'Bell', 'markBell', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612447/Screenshot_2024-08-02_at_11.27.17_AM_ht1zpe.png', 'marky', NULL, '000000', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
      ('F0EQJKbwWjMgQEEBn4bZF7kjl703', 'john@gmail.com', 'johndoe123', 'John', 'Doe', 'johnDoe', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612405/Screenshot_2024-08-02_at_11.26.26_AM_df0sct.png', 'johnny', NULL, '000000', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-     ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612067/Screenshot_2024-08-02_at_11.14.05_AM_nnnnzk.png', 'janie', 'daughter', '123456', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
-
+     ('moDIYpnxdhYhGRpfkbiGzP8CUkA3', 'jane@gmail.com', 'janesmith456', 'Jane', 'Smith', 'janeSmith', 'https://res.cloudinary.com/dgrng25cj/image/upload/v1722612067/Screenshot_2024-08-02_at_11.14.05_AM_nnnnzk.png', 'janie', 'Daughter', '123456', FALSE, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
   INSERT INTO recipes(
     name, chef, family_id, user_id, photo, status, created_at, ingredients, steps
 ) VALUES 
